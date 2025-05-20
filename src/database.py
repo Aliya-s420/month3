@@ -20,7 +20,7 @@ class Database:
                 CREATE TABLE IF NOT EXISTS expenses (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT NOT NULL,
-                    amount FLOAT
+                    amount INTEGER
                 )
             """)
 
