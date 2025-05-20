@@ -4,7 +4,7 @@ from database import Database
 
 
 def main(page: ft.Page):
-    page.title = "Учет расходов"
+    page.title = "Expenses"
    
     db = Database("db.sqlite3")
     db.create_tables()
@@ -55,8 +55,8 @@ def main(page: ft.Page):
             expense_list_area.controls.append(
                 ft.Row(
                     controls=[
-                        ft.Text(value=f"Расход: {expense[1]}", size=30),
-                        ft.Text(value=f"Сумма: {expense[2]}", size=30),
+                        ft.Text(value=f"{expense[1]} -", size=30),
+                        ft.Text(value=f"{expense[2]}", size=30),
                     ]
                 )
             )
@@ -68,8 +68,8 @@ def main(page: ft.Page):
 
     # Компоненты интерфейса
     title = ft.Text(value="Ваши расходы", size=33)
-    task_input = ft.TextField(label="Название расходов")
-    amount_input = ft.TextField(label="Сумма расходов (сом)")
+    task_input = ft.TextField(label="Название расхода")
+    amount_input = ft.TextField(label="Сумма расхода (сом)")
     add_button = ft.ElevatedButton("Добавить", on_click=add_todo)
     total_amount_text = ft.Text(value=f"Общая сумма расходов {total_amount} (сом)", size=24)
     expense_list_area = ft.Column()
