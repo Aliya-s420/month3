@@ -1,3 +1,0 @@
--- database: /home/aliya/projects/month3/db.sqlite3
-
-SELECT * FROM todos;

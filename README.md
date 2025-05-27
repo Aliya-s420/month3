@@ -1,81 +1,75 @@
-# Month3 app
+# Group531 app
 
-## Run the app
+## Папка с виртуальным окружением:
 
-### uv
+Обычно одна из двух папок:
 
-Run as a desktop app:
+- `venv`
+- `.venv`
 
-```
-uv run flet run
-```
+## Работа с виртуальным окружением(в течение всего проекта):
 
-Run as a web app:
+Эти команды(кроме первой) скорее всего нужно будет запускать в течение всего проекта(месяца)
 
-```
-uv run flet run --web
-```
+`python -m venv venv` создание виртуального окружения
 
-### Poetry
+`source venv/bin/activate` активация виртуального окружения
 
-Install dependencies from `pyproject.toml`:
+`deactivate` деактивация виртуального окружения
 
-```
-poetry install
-```
+## Создание проекта:
 
-Run as a desktop app:
+`mkdir month3hw` - создание директории(один раз)
 
-```
-poetry run flet run
-```
+`cd month3hw` - переход в директорию
 
-Run as a web app:
+`python -m venv venv` - создание виртуального окружения(один раз)[или `python -m venv .venv`]
 
-```
-poetry run flet run --web
-```
+`source venv/bin/activate` - активация виртуального окружения
 
-For more details on running the app, refer to the [Getting Started Guide](https://flet.dev/docs/getting-started/).
+`pip install flet` - установка библиотеки `flet`(ТОЛЬКО ПОСЛЕ АКТИВАЦИИ ВИРТУАЛЬНОГО ОКРУЖЕНИЯ!)
 
-## Build the app
+`flet create` - создание проекта(один раз)(ОБЯЗАТЕЛЬНО!)
 
-### Android
+`git init` - инициализация репозитория(один раз)
 
-```
-flet build apk -v
-```
+## Запуск проекта:
 
-For more details on building and signing `.apk` or `.aab`, refer to the [Android Packaging Guide](https://flet.dev/docs/publish/android/).
+НЕ запускайте проек при помощи стрелочки, запускайте в терминале
 
-### iOS
+`source venv/bin/activate` - активация виртуального окружения в терминале
 
-```
-flet build ipa -v
-```
+В VSCode также нужно активировать виртуальное окружение. Жмете `Ctrl+Shift+P` , вбиваете `Python: Select Interpreter` и жмете, как на снимке:
+![image.png](src/assets/screenshots/Screenshot_20250510_115041.png)
 
-For more details on building and signing `.ipa`, refer to the [iOS Packaging Guide](https://flet.dev/docs/publish/ios/).
+далее выбираете `./venv/bin/python` или `./.venv/bin/python`:
+![image.png](src/assets/screenshots/Screenshot_20250510_115902.png)
 
-### macOS
+`python src/main.py` - запуск проекта в терминале
 
-```
-flet build macos -v
-```
+## Элементы интерфейса:
 
-For more details on building macOS package, refer to the [macOS Packaging Guide](https://flet.dev/docs/publish/macos/).
+- `flet.Text` - текст
+- `flet.Column` - колонка, в которую можно добавлять другие элементы интерфейса, которые будут расположены вертикально
+- `flet.Row` - ряд, в котором можно добавлять другие элементы интерфейса, которые будут расположены горизонтально
+- `flet.TextField` - поле для ввода текста
+- `flet.ElevatedButton` - приподнятая кнопка
+- `flet.OutlinedButton` - кнопка с рамкой
+- `flet.IconButton` - кнопка с иконкой
 
-### Linux
+## Термины:
 
-```
-flet build linux -v
-```
-
-For more details on building Linux package, refer to the [Linux Packaging Guide](https://flet.dev/docs/publish/linux/).
-
-### Windows
-
-```
-flet build windows -v
-```
-
-For more details on building Windows package, refer to the [Windows Packaging Guide](https://flet.dev/docs/publish/windows/).
+- desktop application: Приложение запущенное на рабочем столе
+- page: страница, основная часть приложения
+- controls: эдементы управления в приложении, общее название
+- input: поле для ввода
+- update: обновление страницы(приложения)
+- value: значение элемента
+- on_click: функция, которая будет вызываться при нажатии на кнопку
+- event: событие(нажатие на кнопку, ввод текста и т.д.)
+- horizontal_alignment: выравнивание по горизонтали
+- vertical_alignment: выравнивание по вертикали
+- column: колонка, в которую могут быть добавлены другие элементы
+- row: строка, ряд, в который могут быть добавлены другие элементы
+- data: данные
+- date: дата(год месяц число)

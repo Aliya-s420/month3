@@ -1,5 +1,0 @@
--- database: /home/aliya/projects/month3/db.sqlite3
-
--- Чтобы выполнить весь файл, нажмите кнопку ▷ в правом верхнем углу окна.
-
-SELECT * FROM todos;
