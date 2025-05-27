@@ -23,6 +23,17 @@ class Database:
         self.cur.execute("DELETE FROM expenses WHERE id = ?", (expense_id,))
         self.conn.commit()
 
+    def update_expense(self, expense_id, name, amount):
+        self.cur.execute(
+            "UPDATE expenses SET name = ?, amount = ? WHERE id = ?",
+            (name, float(amount), expense_id)
+        )
+        self.conn.commit()
+
+    def get_expense_by_id(self, expense_id):
+        self.cur.execute("SELECT * FROM expenses WHERE id = ?", (expense_id,))
+        return self.cur.fetchone()
+
     def all_expenses(self):
         self.cur.execute("SELECT * FROM expenses")
         return self.cur.fetchall()
